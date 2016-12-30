@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String)(content: Html)(initState: String)
 
 <!DOCTYPE html>
 
@@ -16,7 +16,7 @@
     <script src="@routes.WebJarAssets.at(WebJarAssets.locate("react-dom.min.js"))"></script>
     <script src="@routes.Assets.at("javascripts/components/Greetings.js")"></script>
     <script>
-        var greetingsElement = React.createElement(Greetings, {name: "keyur"});
+        var greetingsElement = React.createElement(Greetings, @Html(initState));
         ReactDOM.render(greetingsElement, document.getElementById("application"));
     </script>
 </body>
